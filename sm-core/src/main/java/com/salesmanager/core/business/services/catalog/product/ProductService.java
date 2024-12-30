@@ -42,6 +42,7 @@ public interface ProductService extends SalesManagerEntityService<Long, Product>
 	 * @throws ServiceException
 	 */
 	Product saveProduct(Product product) throws ServiceException;
+	
 
 	/**
 	 * Get a product with only MerchantStore object
@@ -95,7 +96,13 @@ public interface ProductService extends SalesManagerEntityService<Long, Product>
 	 * @return
 	 */
 	Product findOne(Long id, MerchantStore merchant);
+	
 
 
 }
+@Cacheable("products")
+public List<Product> getAllProducts() {
+    
+}
+
 
